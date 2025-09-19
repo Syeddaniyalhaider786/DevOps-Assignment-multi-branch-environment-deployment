@@ -33,11 +33,11 @@ jobs:
       - name: Run tests
         run: echo "All tests passed!"
 
-
       - name: Archive build artifact
         run: |
           mkdir -p artifacts
           echo "This could be a build/test report" > artifacts/report.txt
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -63,9 +63,11 @@ jobs:
       - name: Simulate QA Deploy
         run: echo "Deploying to QA environment using artifact..."
 
-  - name: Deploy to Production
-  run: echo "Production deploy step executed successfully (dummy run)"
-
+  deploy_prod:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: ci
+    if: github.ref == 'refs/heads/main'
 
     concurrency:
       group: deploy-${{ github.ref }}
