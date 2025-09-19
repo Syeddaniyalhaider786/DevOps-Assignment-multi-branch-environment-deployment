@@ -82,12 +82,13 @@ jobs:
       - name: Simulate Production Deploy
         run: echo "Deploying to Production environment using artifact..."
 
-      - name: Notify (Slack Example)
-        uses: slackapi/slack-github-action@v1.24.0
-        with:
-          payload: |
-            {
-              "text": "🚀 Production deployment completed for ${{ github.sha }}"
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      # - name: Notify (Slack Example)
+      #   uses: slackapi/slack-github-action@v1.24.0
+      #   with:
+      #     payload: |
+      #       {
+      #         "text": "🚀 Production deployment completed for ${{ github.sha }}"
+      #       }
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
