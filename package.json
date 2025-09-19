@@ -1,0 +1,11 @@
+{
+  "name": "assignment-app",
+  "version": "1.0.0",
+  "description": "Dummy Node.js project for CI/CD assignment",
+  "scripts": {
+    "lint": "echo 'Lint passed!'",
+    "test": "echo 'All tests passed!'"
+  },
+  "author": "Syed Daniyal Haider",
+  "license": "ISC"
+}
